@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<script src="libs/btn/anim-menu-btn.min.js" defer></script>
+	<link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css">
+	<script src="libs/swiper/swiper-bundle.min.js" defer></script>
+
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/app.js" defer></script>
+
+</head>
+<body>
+	<div class="cursor"></div>
+		<div class="cursor-inner"></div>
+	</div>
+	<div class="swiper slider">
+
+		<div class="slider-ui">
+
+			<div class="container header-wrapper">
+
+				<div class="top-line">
+
+					<div class="row">
+
+						<div class="col col--center">
+							<a href="#" class="logo" id="logoBtn">
+								<img src="../jslogo.png" alt="Grow">
+							</a>
+						</div>
+
+						<div class="col col--center col--right col--lead">
+							<nav class="main-menu">
+								<ul>
+									<li><a href="#" id="mainBtn">Главная</a></li>
+									<li><span id="courseBtn">О курсе</span></li>
+									<li><a href="#" id="aboutBtn">О нас</a></li>
+								</ul>
+							</nav>
+							<a href="#" class="button button--top">Курс</a>
+						</div>
+
+						<div class="col col--center">
+							<button class="submenu anim-menu-btn">
+								<i class="anim-menu-btn__icon anim-menu-btn__icon--close"></i>
+							</button>
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="header-content">
+
+					<div class="header-content__slide active">
+						<h1 class="letters">Java script</h1>
+						<div class="header-content__info">
+							<p>Станьте фронтенд разработчиком, начните учить JavaScript вместе с нами!</p><br>
+							<button class="button button--main">Учить прямо сейчас</button>
+						</div>
+					</div>
+
+					<div class="header-content__slide">
+						<h1 class="letters">О курсе</h1>
+						<div class="header-content__info">
+							<p>В данном курсе вы узнаете основы языка программирования JavaScript. Изучите синтаксис языка, типы данных, переменные, функции и многое другое!</p><br>
+							<button class="button button--main">Учить прямо сейчас</button>
+						</div>
+					</div>
+
+					<div class="header-content__slide">
+						<h1 class="letters">О нас</h1>
+						<div class="header-content__info">
+							<p>Данный сайт сверстал Анохин Вадим, при поддержке Беляева Антона и Сиротенко Павла.</p><br>
+							<button class="button button--main">My GitHub</button>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="header-bottom">
+					
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="swiper-wrapper">
+
+			<div class="swiper-slide slider__item">
+				<div class="slider__layer" data-swiper-parallax="35%" style="background-image: url(../myimg/slide-1-layer-back.png);"></div>
+				<div class="slider__layer" data-swiper-parallax="25%" style="background-image: url(../myimg/slide-1-layer-middle.png);"></div>
+				<div class="slider__layer" data-swiper-parallax="14%" style="background-image: url(../myimg/slide-1-layer-front.png);"></div>
+			</div>
+			<div class="swiper-slide slider__item">
+				<div class="slider__layer" data-swiper-parallax="35%" style="background-image: url(../myimg/slide-2-layer-back.png);"></div>
+				<div class="slider__layer" data-swiper-parallax="25%" style="background-image: url(../myimg/slide-2-layer-middle.png);"></div>
+				<div class="slider__layer" data-swiper-parallax="14%" style="background-image: url(../myimg/slide-2-layer-front.png);"></div>
+			</div>
+			<div class="swiper-slide slider__item">
+				<div class="slider__layer" data-swiper-parallax="35%" style="background-image: url(../myimg/slide-3-layer-back.png);"></div>
+				<div class="slider__layer" data-swiper-parallax="25%" style="background-image: url(../myimg/slide-3-layer-middle.png);"></div>
+				<div class="slider__layer" data-swiper-parallax="14%" style="background-image: url(../myimg/slide-3-layer-front.png);"></div>
+			</div>
+
+		</div>
+
+	</div>
+	
+</body>
+</html>
