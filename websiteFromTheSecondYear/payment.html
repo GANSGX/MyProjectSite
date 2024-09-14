@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background">
+        <div class="checkout-container">
+            <h1 class="section-title">CHECKOUT</h1>
+            <label for="address" class="address-label">ADRESS</label>
+            <textarea id="address" class="address-input" rows="4"></textarea>
+            <label class="payment-label">PAYMENT METHOD</label>
+            <div class="payment-methods">
+                <div class="payment-option" data-payment="visa">
+                    <img src="./img/visa.png" alt="Visa">
+                    <span>VISA</span>
+                    <div class="selection-circle"></div>
+                </div>
+                <div class="payment-option" data-payment="mastercard">
+                    <img src="./img/mscard.png" alt="MasterCard">
+                    <span>MASTER CARD</span>
+                    <div class="selection-circle"></div>
+                </div>
+                <div class="payment-option" data-payment="paypal">
+                    <img src="./img/paypall.png" alt="PayPal">
+                    <span>PAYPAL</span>
+                    <div class="selection-circle"></div>
+                </div>
+            </div>
+            <div class="price-total">
+                <p>PRICE TOTAL</p>
+                <p id="total-price">1.000.000$</p>
+            </div>
+            <button class="buy-now-button">
+                <img src="./img/koezina.png" alt="Cart" class="cart-icon">BUY NOW
+            </button>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

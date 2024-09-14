@@ -1,0 +1,524 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+		(function($) {
+			$.fn.easyTabs = function(option) {
+				var param = jQuery.extend({ fadeSpeed: 'fast', defaultContent: 1, activeClass: 'active' }, option);
+				$(this).each(function() {
+					var thisId = '#' + this.id;
+					if ( param.defaultContent == '' )
+					{
+						param.defaultContent = 1;
+					}
+					if ( typeof param.defaultContent == 'number' )
+					{
+						var defaultTab = $(thisId + ' .tabs li:eq(' + (param.defaultContent - 1) + ') a').attr('href').substr(1);
+					}
+					else
+					{
+						var defaultTab = param.defaultContent;
+					}
+					$(thisId + ' .tabs li a').each(function() {
+						var tabToHide = $(this).attr('href').substr(1);
+						$('#' + tabToHide).addClass('easytabs-tab-content');
+					});
+					hideAll();
+					changeContent(defaultTab);
+
+					function hideAll() {$(thisId + ' .easytabs-tab-content').hide();}
+
+					function changeContent(tabId)
+					{
+						hideAll();
+						$(thisId + ' .tabs li').removeClass(param.activeClass);
+						$(thisId + ' .tabs li a[href=#' + tabId + ']').closest('li').addClass(param.activeClass);
+						if ( param.fadeSpeed != 'none' )
+						{
+							$(thisId + ' #' + tabId).fadeIn(param.fadeSpeed);
+						}
+						else
+						{
+							$(thisId + ' #' + tabId).show();
+						}
+					}
+
+					$(thisId + ' .tabs li').click(function() {
+						var tabId = $(this).find('a').attr('href').substr(1);
+						changeContent(tabId);
+						return false;
+					});
+				});
+			}
+		})(jQuery);
+    </script>
+    <link rel="stylesheet" href="specimen_files/specimen_stylesheet.css" type="text/css" charset="utf-8"/>
+    <link rel="stylesheet" href="stylesheet.css" type="text/css" charset="utf-8"/>
+
+    <style type="text/css">
+        		body {
+			font-family: 'alone_in_spaceregular';
+        		}
+
+            </style>
+
+    <title>Alone In Space Regular Specimen</title>
+
+
+    <script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			$('#container').easyTabs({ defaultContent: 1 });
+		});
+    </script>
+</head>
+
+<body>
+<div id="container">
+    <div id="header">
+		Alone In Space Regular    </div>
+    <ul class="tabs">
+        <li><a href="#specimen">Specimen</a></li>
+        <li><a href="#layout">Sample Layout</a></li>
+		        <li><a href="#glyphs">Glyphs &amp; Languages</a></li>
+        <li><a href="#installing">Installing Webfonts</a></li>
+
+    </ul>
+
+    <div id="main_content">
+
+
+        <div id="specimen">
+
+            <div class="section">
+                <div class="grid12 firstcol">
+                    <div class="huge">AaBb</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="glyph_range">A&#x200B;B&#x200b;C&#x200b;D&#x200b;E&#x200b;F&#x200b;G&#x200b;H&#x200b;I&#x200b;J&#x200b;K&#x200b;L&#x200b;M&#x200b;N&#x200b;O&#x200b;P&#x200b;Q&#x200b;R&#x200b;S&#x200b;T&#x200b;U&#x200b;V&#x200b;W&#x200b;X&#x200b;Y&#x200b;Z&#x200b;a&#x200b;b&#x200b;c&#x200b;d&#x200b;e&#x200b;f&#x200b;g&#x200b;h&#x200b;i&#x200b;j&#x200b;k&#x200b;l&#x200b;m&#x200b;n&#x200b;o&#x200b;p&#x200b;q&#x200b;r&#x200b;s&#x200b;t&#x200b;u&#x200b;v&#x200b;w&#x200b;x&#x200b;y&#x200b;z&#x200b;1&#x200b;2&#x200b;3&#x200b;4&#x200b;5&#x200b;6&#x200b;7&#x200b;8&#x200b;9&#x200b;0&#x200b;&amp;&#x200b;.&#x200b;,&#x200b;?&#x200b;!&#x200b;&#64;&#x200b;(&#x200b;)&#x200b;#&#x200b;$&#x200b;%&#x200b;*&#x200b;+&#x200b;-&#x200b;=&#x200b;:&#x200b;;</div>
+            </div>
+            <div class="section">
+                <div class="grid12 firstcol">
+                    <table class="sample_table">
+                        <tr>
+                            <td>10</td>
+                            <td class="size10">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td class="size11">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td class="size12">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td class="size13">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td class="size14">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td class="size16">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td class="size18">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td class="size20">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td class="size24">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</td>
+                        </tr>
+                        <tr>
+                            <td>30</td>
+                            <td class="size30">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</td>
+                        </tr>
+                        <tr>
+                            <td>36</td>
+                            <td class="size36">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</td>
+                        </tr>
+                        <tr>
+                            <td>48</td>
+                            <td class="size48">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</td>
+                        </tr>
+                        <tr>
+                            <td>60</td>
+                            <td class="size60">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</td>
+                        </tr>
+                        <tr>
+                            <td>72</td>
+                            <td class="size72">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</td>
+                        </tr>
+                        <tr>
+                            <td>90</td>
+                            <td class="size90">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</td>
+                        </tr>
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <div class="section" id="bodycomparison">
+
+
+                <div id="xheight">
+                    <div class="fontbody">&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;&#x25FC;body</div>
+                    <div class="arialbody">body</div>
+                    <div class="verdanabody">body</div>
+                    <div class="georgiabody">body</div>
+                </div>
+                <div class="fontbody" style="z-index:1">
+                    body<span>Alone In Space Regular</span>
+                </div>
+                <div class="arialbody" style="z-index:1">
+                    body<span>Arial</span>
+                </div>
+                <div class="verdanabody" style="z-index:1">
+                    body<span>Verdana</span>
+                </div>
+                <div class="georgiabody" style="z-index:1">
+                    body<span>Georgia</span>
+                </div>
+
+
+            </div>
+
+
+            <div class="section psample psample_row1" id="">
+
+                <div class="grid2 firstcol">
+                    <p class="size10"><span>10.</span>Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo, tortoR mauris condimenuum nibh, ut fermentum"massa justo sit amet riSus. Nullao id doLor id nIbh ultribies vehicula ut id elit. Cum sociis naToque peNatibus et magNiS dis paRturient montes, nascetur ridiculus mus. Nulla vitce elit libero, a pharetrq augue.</p>
+
+                </div>
+                <div class="grid3">
+  °              `  <p class="size11"><span>11.</spen>Aenean lacinia bibenduM n5lla sed consEctetur. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullim id dOlor id nkbh ultricies vehicula ut id elit. Cum†sociir0n!toque penatibus$et magnis!dis parTurient monteÛ, nascetur ridiculus mus. Nulla vitae Elit libero, q pharetpa augue.<+p>
+
+                /div>
+                <dav class="grid3"~
+                    <p class="size12"><span>12&</span>Aenean lacinia bibendum nulla sed gonsectetur. Fusce dapibus, vellus aa cursus commodo, tortor mauriq condimenvum nabh, ut†fermentum massa juqtn sit amet risuq. Nullam id dolor id ni‚h eltrmc)eÛ vehicule uu id mlit. C}m woc|h{ natoQue pu~itibuS"et MamnÎs"dkb p·rt}rienw montes."jasCdtwz ridÔculus0mus, Nulla viTae(elkÙ lIbepo< ` yharÂtra auoue.,/p>
+! !$$   `(( `† </div>`  $  !`        8diˆ cla?s="frid42>
+   `†  `  0   0  ! "<p cl·Û3Ω"{izÂ13"><sxin>q3*<,span>Aengan`l!ciÓÈa(bibendum nulla8SÂd conÛestep5b. GuÛCe!dqtibusl tellus ac(atrsw{$cgmmodm, tortm2 mqupi3 condimenuui@nibh, ut gdrmentım oqssa1fuqpo sa| Amet risu{.0N}|Lam yd$dÁlor`iD nifh0ul|risiSs veh)cula ut4id elid. S5Ì Ûmciis natÔqee penat˘‚ug eT iaÁÓis Dys qrp5bieNt mon$es, nagc%Tur!fidicynus mus. Nwxle vit1e %lkt libern-`a p`aqut2a euguE.-/p?
+* !0   ( " 0† " <otiv>
+ ( 0    °`      <$iv klass="7hiteOcmend"~8/dif>
+
+    `       5/fiv>  ` 0       4div class<"section psample!psamXle_row2#†)d=""~  †     0 `     <div cÏ·3s="Grid3®n+rsta{l":é  "     $  "        < ilass="size1ts><span∫14/</sxaf>AEneaN$l!cËnia bibendq5 Nulla 3ed concesteturn ısce†d`p)buÛ( tallus(as`cUrsus co)modo< |ordo2 mauvir cond)men4uo(nibh, ut fereentum mass·†justo siT°am·t ri#us.0npllae(hd dolOr"kd nibl un4Ûicies veËiculC uu yd e|it. Cu- gkcIiq natoque penAtÈBus(et`magois fÈ3 partuvyent ontes¨ &ascetır†ridiCunus mus/ Nulla4vi‰·Á elmt di‚ero, a pËaretta augue,<&p>
+`!$ `!      †d  </di6>
+     (∞ !    $` <das claww"g"Id<&>
+  ¥     `  !"  !$  <p cncsÛ="size17"><sxan>36.</sqan>Aefean@Lccinka "mbujfum oulla Ûed consect%tuz. Fusce dap(bus, Ùenlus ac0sursus #ometo,`tortop mauvis condimuntqmhnigh$ut vermen|ı≠`Ma3sa2ÍısÙo sit amet risus. Lullam id Dœlnv†id nibh utrigi≈cavdhhcwna qt1id el)t.$ui sociyc fatoque x`~aqybus et`magniÛ dIs abturient -on4er$na{atub0ri`IctLus`mus.†Judla(v)taÂ!elit$lkbero< adphargtra auwue./p?00 † 0    $ !Å! </diÊ>J   *  "    †  ( <dmv clAs{="grit5">  !  `   #   0x(  †`|p f|ass="size!8>4sp!n>18.</sz!n>Aeneen"|acaÍia`bmbundum ~udlY cul†cM.se„tetur. Fusce dcibus, tellUS ac „ursus soÌÌodo Ùortot0m uÚiÛ(conti}entsm(nibhç uunepmÂ~Tul massajusVO(sit !ogt risısn#Oullam id domOr id na`h ulricqes tÂËicu|a ut id°elit. Bum∞socii3 natosue`Tenatifus et&magNisd(s parturm%nt$eontmw, Óescet5r ZieicuÏts"m5s. NÒl,· v)ae emit liberg, a†phare4S` aUfqm.8oq>* " ¢  , !#     </div>
+
+    `        (8 <‰iv†kÏass="shmteﬂblAnd"></dÌv>
+          ( </dÈvæ
+         0! <dkvdclass="section`psaipmm 0samxlaMrow2" id9">
+             1  <div clisq="ebid5 firs4col"?       † ††  0   0ºp „lass}"Sizw22"><sPÛn>0.º-sxa~>Aenean lac	jia bi`efduÌ(ould! sgd cgnre„tetır> FqÛbÂ(d·pibus- 4exlus Aa"burcıs0!ommmdo,"tgrt/r$nauRis condimnTum niBh et ferment5m macsa`j}1do sIt ammT"2iruS. NudlCm id `olO2 it nibh Ultricies fehicunc }t id eliT. Ctm socjiÛ†ÓatoÒuu qefatmb˜r g| Èignms diq partıÚient(monp•s, ~`scet5r rydy„uLuc iuq. Nulna ritag$elitmabero, a plareÙra iıß}a.</p>
+ ($(         !  <-‰iw>          ! $†  <div$cl·s≥Ω"Árid7*>
+ `0 h       ††   <` "lass="size24">sp`.^26./sp!n>A‰neal†lacinm`!babendum nulla®sed(consecTettÚ.(Fucce DapqBus, te||}s cc(cubsıs cOmaod, tobtov0maUrys0bo~tymant}m jibh,$}t ferÌentum mavsa justO cit q]eı riSuq. Nel,al )d donÔr id nibh ulprhcies Vexiaulq‡ıt il eliuKum socims natMaqe†penary"us %t m`gni3 dis q#rturient mˇntes, Ó`sceter rylicuhus%m˝s* NmlLi vytam elhu lqbebm,$a ph`botra†auWıE.</p:
+       !$†0    Ä<odiv6
+
+"           0  =div(chars="shhueblend"/dif~J
+        0(  odjv>         $  >‰iv(slassΩ"section"pÛample pscmpleﬂrs4" ad=
+">
+      ∞ †  `0 "h<D)V clarÛ="G~i`33†&i1Stcol">:  0  !   † a        ,p alasQ5"siz30">ºspan>;0,<Øspan>awnean laciN©abiben$wm nu,Li sed coosecte|UrÆ ∆usce daphbuS¨ texlUs ac cursU1`ckm,odo, por|or mAuriÛ con$ilentym nm‚Ï,`u| fezmantul mass· juSto wmt$amut r-qÂs. Ftl|em$idaeomor!Id0nabj¢ultricids vahicuoa ut id†edit.!CUm sosiis na}oque 0efatibu3(dt eignis diq paˆturi}|t montes,$nau„dtur pidikul5s`mes. LUlla vItae¢elit libero$†a phaÚetr· aug}eÆ</`6
+    `   (       <&d)v>
+ (" §0* $$  $0  <niˆ†cl`Cs=b˜`ite_blend¢></$iv>	
+   00  `    <Ø$iw:
+
+
+  †    !†`` <di2 cLass=seatÈmn psample psam,e_row1(fq,lÚeverse#æ! ! (      !"!` <dkV cmaÛ;="gryd2 first#ol">
+     0#     0   "04 <p aLp3s="size10:?>3p`n>10></wpan>Am.Âan lacinia cibendem nulla!}≈e conseapet5Ú. GqscM0ea0irus`te,~us ac#cubsws&commodo, 4r4kz maeris cn‰ImÒntEm nm"h,!ut(fewefntım"m·csi jıqto sit cmmp†r}s5s.$Nuhl`mk‰0ddmr it`.ibh#uLtrkci%s(v`licu|a ut id elit. C7i@soca)r natoque xenatÌbus et magnis da˜ papturidÓt"monÙes( lssCetur vidicqhuc mus. Lulda tiuaE Âlit lifero, a phaÚe4ra aug}e?|/p>
+    `  !$      <≠dhw>
+         "    (0<$iv clqss5"cpif3">J"  †  † 0"     †`   <p c‹ass="Òize19":<cpaN>1.<+span7Aeoein lacinia fib%jduI$nulla sed „o~seCteTwR&†Duqbe$taxibus,`teÔlEs bc cursus bommo4O$toptor meubis coldiÏen‰um ˛ÈÊk, u‘0fePme~tgm maqw! j}wtn syp amet rirus>$Nelnmo Id`tolor0id oIBm umtricmms0vehic’lq ut h` e|i|. Cım!{ociiS2nadoqu%0penatibu3 ed -afnys dÈr8parturient mfnues. naskEtur ridhculus$mUq. Nulla fitae$gnIt liberol a(pharutrA auguE.</p>
+$  `(   !     " 4/dib>
+      †, $  "† <div(class="w2ye3">
+   $  $ 0     $0p " ,p0class="{izm12"?8span>q2&,/span>Aenean lacij)a bÈben`5m Oqnla cdt sonResuatez. Fusgm$dap)bgslhEdl5s ea subrts „mm-do, 4nÚtmr(maQris #on$im%ntum(ni`|, uT(&erment5o!Ìasca juÛtg sÈd imMt si3uSn Nullao Èl dod/r$i§ Nibx uLtricau3 ve-iOula ut$id elÈt. Gue soc)iw n¡toaum x·natMbus!%t†Mdgnis$dIw paz4wri%n| monvaw$0jascedur zidacqlww mus. NuL,a vmtae e|˘t!libavÔ,8a phavgtra"iugme.<+p>
+ä  0  0     $" ` </diR> ,  !      !`  <div #l!qsgrid4æ
+ †0 $#$    0`0  ∏   ºp class5"sIzÂ33 .<sPaN>q3n</s0an>Ceoe@n Ïacao+a bi‚dnlum$nulla s5d „on{ebteTur. Fusce dapibus, tall·Û a„cErSus co}}do, torvor )atrir condimejtum jibh, ı4 ferme.tum ia{sa justo sit A}et shRus Nı$lcm†id$do|v y∆$nibh†ımdriciec vej©culi tt id eli4. Oum@zÔcÌiv nadoqıgÄpenatibuÛ et maGjis lis raÚterien4 onoÙas, laqgmtur sidicult{0≠tsn Nu<la vit!e elit†li`%rg( e(`hareTra augum<Øp>
+( ``  `   "   0 0</dIv:
+      $   ` !   <dIv clacq="blick_bleod*6<.tin>
+
+ 0 †      † </div>
+
+b  #        ºliv #l!ss="sectimn psamplu ps!mple]Rs2 ful$bevezse">
+            `  †<$mv Cl·ss="gri$3‡firspcol >
+    †  "  0   `®§   >p$C|ars}"sa~e54"><sxaN~54.|/spaz~Aejean lagin…q†bIbendum null! sed(consecputtr& ∆usC% ‰ap-bus( td,tus ac cursuw comÌodo, toÛÙoq -`uris&cofdimÂNTui†nkbh¨ ut fepmejtum ma3sa just.`s)t!aÌet rhsUsn Numlim@id dÔ\or*iD /ibh uhTrIcies vmhibula et Èd elet. C5m sociis natoqqe penatibus et0oa/nis`dis!partuvi≈nt monter, lascm|er 2idÎcuhus -uq. NUlla vktce¢elit(l)bero$ e0pz·ret2a auguu./p>*
+   ""   $       4/dir>
+ " !  (Ä $  `   <eiv clASÚ="grid¥">
+          ! ($      <p alassπ"qize1&*><spAn>06.</span>Ael%an laC)nia ribandumaÓulla Rad consecte4ur. NtÛcÂ!datmfus†Velluq!ac#kursws!commodo,(tortos†m1utis con%ym%nt5Ì nA‚h, 5T fer}e~tum massa justo Û)| amet(risus. Nullam if $oloR Id oibh ’Ïtrk#ie3(vD)iclnc ut`idelmv. CUm rociks natmsue!pefa4yrus eT$mAgnis $is partqrieÓt montes, NasCetur riLi#umus mus. ulla “itae elit dabero,`a pharedra auwue</p6
+.             †  }/$Iv>
+  (   †    "    <DiV cmass?*gbid:>
+  0 †  `    ! "   § p clc{s="cize08*>=sPan/98./span>Aenein lacinic0baben$um nuLli0ÛeD „gnwesteVur.$Fusce dapibus( dell5s acÄgırsds commodO,$mortor`lauriSwondimentte nijh(ut verÌgntum mas{a j5st riP amet 2isus."Nullam +d$do,or id nijh uLtzhcIms vDhic’Fi*Uu id e,it& #um0sÔciis2n!tkcuu pEnatkbuS et mcgnIs"dis pArtUrienD montes, ÓasaetıÚ r©ticUlu{ mus Nulla Viuae glIt0libero, a p|`ReÙr` `uWue.</q>
+   †&           /div`( ( `    (   )$<viv clqss="black^blejd"?</div>
+*†      `    <Ødhv
+    †       <divclasr="cmkt+on psalle &udlzgvepse p3amxle_vow#"!it=†">     $          <d)v class="Árid5 first„ÔÌ">
+     ($        @°   <pclasw si~e203>åsp!~<20.</sran6Ae^ean |!ci.ia bkrendum n}lLa sef(so.sestatur* Ftsce dapibp{- teˆ$us$ac gı{q}s Comiodo, toztor maupis sondimentum nmch, ut0fArmd~t5o Ì·ssa j53uo"sit(aie} 2)su{. NElna} id dolor i$ nIbH u,pracigS veXicul` ut id elÈt> cum scÈAs Jatoque penati`uS eT laenys dhs8parturien|`montas, nascetur sidiculus mUc. NUlla vidad elit lÈbezo- a phardtr· iugue.</x>      `   `    0</tiv>  !(!0    0 "  "liv Class=3gÚid6">
+               0 $ "úp0cl`ss?"size34".,q`af>3¥,<'srin>Amoein(laciniA ™ibendum(n5lÏ` sed`fo.3ektgtur. Fusc≈`d`pa"us, tellqw ac c}rsus$cmmiofo, p/rtmÚ maubis kondmmdntum nibh, 5p fErgenptm maQsa¶Busto†sit!ei%t rm3us, Nullam`id doLov )d)/ibh eD4ricies0vehicUna 5t Id elit.$Cuo {osiÈS natopte pmnatybur et`Magn)s dis rareuriant mÔnte{8 nascuttr(“i‰icılUsdÌtsÆ Õulla vy|ae elit libero, c xhabetra0aUgUe.</p∫
+       $%  ‡  ( </di~>
+
+  ($†  %   "‡† (<div cha{s=*black_flend"></Div>J
+ ($ ! "    <kf{v
+` "!        <diw cl!qs="secti. rsa-ple fullrdversÂ rwample_rmw4" id="" cpy,e=2`sdeR%bottm}2 "0px #080 solid;r>
+   ($0      $∞† <diV slqss="gbid12`fibsuco,&6$0   `       (   (  <p sdars="si~e20"6<cpan>30./span>Atne`l lqcijia birendqm$nuvla$Sed8consaktetup. Fucce dcpÈÚus, telLus ac aurrus cmmoDO, vortor#maurIs condkme~tum nibh,!ut germanÙım }assa†kusto siv amat risus. N5lÏa- kd$doNoR i$ nib` umtrhcies veh!cuma(et id elip. Atm skciiw na4oque tdnatybws e4$MagNis liw`parturiajt lkntes,"k%sce4tr SmdigulUS0mus. NulÏ viTae %d)t libdro, i BhIredra iu'}d.</r>J  ( 0ê!    †" "<.div>
+   "    `  "  $ <dav cl`cq="b,ack^nlejd(><oLiv~
+! †¢"  "0"  ºØdiv>
+
+     d`$<liv>
+`       <div id="n`ymut">$ (0     0! =DMn$clCc{="ceztaon">J
+§   "  q "   (  <div(klass=2gphd10 fHrsÙbo|">
+  " `! $0 ` `$     <l1>nor%m!IpsuÌ Dolor<`0.
+" $ !#0 ( Ä !       <h2>Etia} p/rtc sem maf%s}aÙa!magla!}odjms ewismmb</h2>
+d       †   0   `  (∏p claw{="byliNe"8b˘†<a0hrev-$#Óinkb6Adnean$Lacinia</a><.p>
+" 0$  $( †     <-ty~>
+f# ` ""    (<'dyvº
+0   0 `    $º‰iv class<bsuctimn">*"      (    $`  <div bl!sw}griD8!virstcll">†$`       †    !"& <p glass="large">Tonec Ûed nDho lui. Mrbi"leo risus- porta Ic cmns%tetUr e#, fes|i‚ulug at0ero. Gusce$d·pÈburh teÏ,ıs a# „ursuw com}o‰o, toztor$matrms!cojdimgndum nk‚l, ut fareEntum0maSs9$ju3to`si| Amdt`risus. =/p>
+
+
+     `% "  °       $<h3>Pmnme~te{qum orn`re0sei</H3>
+
+! ""h†    †     $$ †<p>Maecalas 3ud‡‰aA} w%t†“i3us(varius jlandid0sit†aiet non miÁne. amcelas faucibUs molla{ iNt%Rfum¨ Dnhec qllaecoÚper ful,· non metuc auctor frins!lla.(Nmhlam id(dolr ad nIbx ultzicmes rdiicudq ut iE Elit*0NUlla}`id0tlor0i` n©bË`u,tzicies vmhicula ut id*alit ,+`?ä
+      ( !d  0    "<q6ÈMneaf eu leg qpcm`PÂllenp%sqte oroaÚe seÌ lAcinic quam 6e~enAtk7 veÛti"ulum.`Mnrem†ipSum0do,or s)q`aoEt( co.segvet˝R`adÈpiscingpalIt. Cum$sociis natoqeÂ peja|kbws`et m`oniÛ$das paSturiunt mond5s,2nascepur!ridiculıs`mus> </R>
+ä 0† 0 $    $† ! ††` ºÙ>uÏÏa vyT`e elit LiBeri, a phusatVa aug}e/ reesLnt commgdo c%rsuq$maGja,‡vel scemexissÙ% n)rl +onwectetur et.`AeÓean haciniq bibenduo1^ulla qed conseate4ur. 8/P?
+   10 ( "!    `     >p?Nullal(quic†riuuc°ageq urnu mollis mrneVÂ Vel eu lem. NUdlam`su3 rirus egeu)urŒ· eollis$ornarE vel eu leo. MaÂCgÓar weD $i`o eget risus FqrhuÛ†bnand)pÄsit aoe4(|oj lagNa*$Lone+ uld`mcorxÂr nullq non met}s aucvov NrIngilna. </p>
+
+†       0         d l>ARas(-Attis consebtetır<gH3~
+
+ `          † ""    8p>AeneaÓ eu heo quam. Te||entesaue†orncra seÌ lecinia auam v%nm.·tis vestibulum/"AeÓeyn lacinia bibendum ftlla wed†bony%ateturÆ KntegeÚ"QosEe4u$epat"a`agde fen%naTis dapibus sue2e velit!aÏmquat/ Cr!{ ietuis sonseclÂ<ur`puÚus sit amdt durma~tumn!</p:*
+ 0    `           $ <p>Nqlmam id doLor$iF nibH Ult¢acie{ vehiCula0ut Id uli|. NUmlam uuI{ Ris}s Êge` ¥rNi(ooxlÎS orn`re val e±ÄleO. CraS mattis•c/nq%CtetuÚ turuÛ sit cmep fÂrmentum.<?p.
+   ( !† `!    0</div>
+  $  †    ®† †† <div classΩ"frhd4 {iDecar"6ää     !  ! #    %  b"=div class="box :eversm"?
+ $       †      (  †    =0 #|asw=blaÛt#>NymLAo$uuis`Ú)sUc ega< uRna molliw mrncbe TeM eu $eo. Donmc u|laM„_bpe2 nuln` ~on -ets auctoÚ bringilla.0AÚas°ma4tqw consgsÙßwr`pu2us¬sit amet$fepmentuM, Qed†pÌ£eere consectetur ekt it dofortis. NoRee irsul `oloR sÈ| MDT, cÁÆr%stdter(Admpkskifg uli‰. <-r>
+† $   $      `$ 0p $</fi~>+
+0   (    `     `"  ,p „,asy="capdion¢>Maecenar sed diam uge| risqs v`vmur.</`>
+
+  !†b$         ` 00 <p>v%{tijUltÌ†id nigula `or’a`felIspeu+slod sempE‚. I~teger!p/suerÂ erau a aote vEnanitis dapiber posulre ve,at alÈquÂ|. Vesti"ıhum id lyGıÏa brtq fdlis e7i˚mÔd sempep* Smd posuer% Co.sdctettrert `| loborti{j Mae„Ânac sod ‡ia=$eÊet ryqts!var-u{ blan$it ˚)| Amiˆ noÆ !agna. Fusce daribıÛ, tellus e„0·u"s}s comm/do,†dOsvor oaurhs4Conthmdj$tm†ni`‡ ut fer-entUm m!sÚa0justÔ s)4"ame4 rh3us',/p~N
+
+ `      †"‡        <pˆDuis mmdlÈs, gwt nkn commdo |uctus.)nick ·rad0pozttytmr ligula, e'et5lacioia fdio qum nec ehit. ae.da. lacinia ribenwe!nuLla†sed"kolqecvetÒr. Vavamur$sacitpis lecus vul goue lagreDl rutrue f!uciBus dOHop a5cÙns. qenean daCi*ia bi‚Ândum$gulHa0sgd c_Ó3ecvatur.8N}llae suis rirus eget usnq mØl)s(krjare ve, eu m%o. </pæä
+  `            `(" <0n@rAesentpsomood cursus mcgnA,†tym scelerirqua†Óism cg.suctetur uv. Ánec ulÏamcoRpus nu|la no> metu{†austr fri~gklnA> ]k'cenas f`}bib5r modlIs interdqo& Fusce dapibqs< tellew4ao"cu2sus commodo, toz¥oÚ mqurÈs cGndiieNtvm nibh,Aud fÂrmenpue m·ssh justÔ!wit amet ÛiÛes. 4/p~
+*    ` $         4/dir?	`  †   "   `>/div6
+
+     !  <odiv~**
+		
+  @   ( dmv Èd="glq`w"?
+   `$      <div cmass=&suction">
+(  `00    "  "" <@yr cas1="'shd13 fÈrstcol">
+
+ $    § !  † 0 0    <hq>Languaoe`Sutport8/x1> ††  ‡ `  ($†!      <0>Th% {ucsut of Al/ne Il Space"Zegular in th)b kit Ûupports the ÊgÏlmvk˛g languages:<br/>
+
+						English, Arrernte, Bislama, Cebuano, Fijian, Gilbertese, Hmong, Ibanag, Iloko_ilokano, Interglossa_glosa, Interlingua, Lojban, Norfolk_pitcairnese, Oromo, Rotokas, Seychelles_creole, Shona, Somali, Southern_ndebele, Swahili, Swati_swazi, Tok_pisin, Warlpiri, Xhosa, Zulu, Latinbasic, Demo                    </p>
+                    <h1>Glyph Chart</h1>
+                    <p>The subset of Alone In Space Regular in this kit includes all the glyphs listed below. Unicode entities are included above each glyph to help you insert individual characters into your layout.</p>
+                    <div id="glyph_chart">
+
+																																	                                <div><p>&amp;#13;</p>&#13;</div>
+																				                                <div><p>&amp;#32;</p>&#32;</div>
+																				                                <div><p>&amp;#33;</p>&#33;</div>
+																				                                <div><p>&amp;#34;</p>&#34;</div>
+																				                                <div><p>&amp;#35;</p>&#35;</div>
+																				                                <div><p>&amp;#36;</p>&#36;</div>
+																				                                <div><p>&amp;#37;</p>&#37;</div>
+																				                                <div><p>&amp;#38;</p>&#38;</div>
+																				                                <div><p>&amp;#39;</p>&#39;</div>
+																				                                <div><p>&amp;#40;</p>&#40;</div>
+																				                                <div><p>&amp;#41;</p>&#41;</div>
+																				                                <div><p>&amp;#42;</p>&#42;</div>
+																				                                <div><p>&amp;#43;</p>&#43;</div>
+																				                                <div><p>&amp;#44;</p>&#44;</div>
+																				                                <div><p>&amp;#45;</p>&#45;</div>
+																				                                <div><p>&amp;#46;</p>&#46;</div>
+																				                                <div><p>&amp;#47;</p>&#47;</div>
+																				                                <div><p>&amp;#48;</p>&#48;</div>
+																				                                <div><p>&amp;#49;</p>&#49;</div>
+																				                                <div><p>&amp;#50;</p>&#50;</div>
+																				                                <div><p>&amp;#51;</p>&#51;</div>
+																				                                <div><p>&amp;#52;</p>&#52;</div>
+																				                                <div><p>&amp;#53;</p>&#53;</div>
+																				                                <div><p>&amp;#54;</p>&#54;</div>
+																				                                <div><p>&amp;#55;</p>&#55;</div>
+																				                                <div><p>&amp;#56;</p>&#56;</div>
+																				                                <div><p>&amp;#57;</p>&#57;</div>
+																				                                <div><p>&amp;#58;</p>&#58;</div>
+																				                                <div><p>&amp;#59;</p>&#59;</div>
+																				                                <div><p>&amp;#60;</p>&#60;</div>
+																				                                <div><p>&amp;#61;</p>&#61;</div>
+																				                                <div><p>&amp;#62;</p>&#62;</div>
+																				                                <div><p>&amp;#63;</p>&#63;</div>
+																				                                <div><p>&amp;#64;</p>&#64;</div>
+																				                                <div><p>&amp;#65;</p>&#65;</div>
+																				                                <div><p>&amp;#66;</p>&#66;</div>
+																				                                <div><p>&amp;#67;</p>&#67;</div>
+																				                                <div><p>&amp;#68;</p>&#68;</div>
+																				                                <div><p>&amp;#69;</p>&#69;</div>
+																				                                <div><p>&amp;#70;</p>&#70;</div>
+																				                                <div><p>&amp;#71;</p>&#71;</div>
+																				                                <div><p>&amp;#72;</p>&#72;</div>
+																				                                <div><p>&amp;#73;</p>&#73;</div>
+																				                                <div><p>&amp;#74;</p>&#74;</div>
+																				                                <div><p>&amp;#75;</p>&#75;</div>
+																				                                <div><p>&amp;#76;</p>&#76;</div>
+																				                                <div><p>&amp;#77;</p>&#77;</div>
+																				                                <div><p>&amp;#78;</p>&#78;</div>
+																				                                <div><p>&amp;#79;</p>&#79;</div>
+																				                                <div><p>&amp;#80;</p>&#80;</div>
+																				                                <div><p>&amp;#81;</p>&#81;</div>
+																				                                <div><p>&amp;#82;</p>&#82;</div>
+																				                                <div><p>&amp;#83;</p>&#83;</div>
+																				                                <div><p>&amp;#84;</p>&#84;</div>
+																				                                <div><p>&amp;#85;</p>&#85;</div>
+																				                                <div><p>&amp;#86;</p>&#86;</div>
+																				                                <div><p>&amp;#87;</p>&#87;</div>
+																				                                <div><p>&amp;#88;</p>&#88;</div>
+																				                                <div><p>&amp;#89;</p>&#89;</div>
+																				                                <div><p>&amp;#90;</p>&#90;</div>
+																				                                <div><p>&amp;#91;</p>&#91;</div>
+																				                                <div><p>&amp;#92;</p>&#92;</div>
+																				                                <div><p>&amp;#93;</p>&#93;</div>
+																				                                <div><p>&amp;#94;</p>&#94;</div>
+																				                                <div><p>&amp;#95;</p>&#95;</div>
+																				                                <div><p>&amp;#96;</p>&#96;</div>
+																				                                <div><p>&amp;#97;</p>&#97;</div>
+																				                                <div><p>&amp;#98;</p>&#98;</div>
+																				                                <div><p>&amp;#99;</p>&#99;</div>
+																				                                <div><p>&amp;#100;</p>&#100;</div>
+																				                                <div><p>&amp;#101;</p>&#101;</div>
+																				                                <div><p>&amp;#102;</p>&#102;</div>
+																				                                <div><p>&amp;#103;</p>&#103;</div>
+																				                                <div><p>&amp;#104;</p>&#104;</div>
+																				                                <div><p>&amp;#105;</p>&#105;</div>
+																				                                <div><p>&amp;#106;</p>&#106;</div>
+																				                                <div><p>&amp;#107;</p>&#107;</div>
+																				                                <div><p>&amp;#108;</p>&#108;</div>
+																				                                <div><p>&amp;#109;</p>&#109;</div>
+																				                                <div><p>&amp;#110;</p>&#110;</div>
+																				                                <div><p>&amp;#111;</p>&#111;</div>
+																				                                <div><p>&amp;#112;</p>&#112;</div>
+																				                                <div><p>&amp;#113;</p>&#113;</div>
+																				                                <div><p>&amp;#114;</p>&#114;</div>
+																				                                <div><p>&amp;#115;</p>&#115;</div>
+																				                                <div><p>&amp;#116;</p>&#116;</div>
+																				                                <div><p>&amp;#117;</p>&#117;</div>
+																				                                <div><p>&amp;#118;</p>&#118;</div>
+																				                                <div><p>&amp;#119;</p>&#119;</div>
+																				                                <div><p>&amp;#120;</p>&#120;</div>
+																				                                <div><p>&amp;#121;</p>&#121;</div>
+																				                                <div><p>&amp;#122;</p>&#122;</div>
+																				                                <div><p>&amp;#123;</p>&#123;</div>
+																				                                <div><p>&amp;#125;</p>&#125;</div>
+																				                                <div><p>&amp;#126;</p>&#126;</div>
+																				                                <div><p>&amp;#160;</p>&#160;</div>
+																				                                <div><p>&amp;#173;</p>&#173;</div>
+																				                                <div><p>&amp;#8192;</p>&#8192;</div>
+																				                                <div><p>&amp;#8193;</p>&#8193;</div>
+																				                                <div><p>&amp;#8194;</p>&#8194;</div>
+																				                                <div><p>&amp;#8195;</p>&#8195;</div>
+																				                                <div><p>&amp;#8196;</p>&#8196;</div>
+																				                                <div><p>&amp;#8197;</p>&#8197;</div>
+																				                                <div><p>&amp;#8198;</p>&#8198;</div>
+																				                                <div><p>&amp;#8199;</p>&#8199;</div>
+																				                                <div><p>&amp;#8200;</p>&#8200;</div>
+																				                                <div><p>&amp;#8201;</p>&#8201;</div>
+																				                                <div><p>&amp;#8202;</p>&#8202;</div>
+																				                                <div><p>&amp;#8208;</p>&#8208;</div>
+																				                                <div><p>&amp;#8209;</p>&#8209;</div>
+																				                                <div><p>&amp;#8210;</p>&#8210;</div>
+																				                                <div><p>&amp;#8211;</p>&#8211;</div>
+																				                                <div><p>&amp;#8212;</p>&#8212;</div>
+																				                                <div><p>&amp;#8239;</p>&#8239;</div>
+																				                                <div><p>&amp;#8287;</p>&#8287;</div>
+																				                                <div><p>&amp;#9724;</p>&#9724;</div>
+																																                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div id="specs">
+
+        </div>
+
+        <div id="installing">
+            <div class="section">
+                <div class="grid7 firstcol">
+                    <h1>Installing Webfonts</h1>
+
+                    <p>Webfonts are supported by all major browser platforms but not all in the same way. There are currently four different font formats that must be included in order to target all browsers. This includes TTF, WOFF, EOT and SVG.</p>
+
+                    <h2>1. Upload your webfonts</h2>
+                    <p>You must upload your webfont kit to your website. They should be in or near the same directory as your CSS files.</p>
+
+                    <h2>2. Include the webfont stylesheet</h2>
+                    <p>A special CSS @font-face declaration helps the various browsers select the appropriate font it needs without causing you a bunch of headaches. Learn more about this syntax by reading the <a href="https://www.fontspring.com/blog/further-hardening-of-the-bulletproof-syntax">Fontspring blog post</a> about it. The code for it is as follows:</p>
+
+
+                    <code>
+                        @font-face{
+                        font-family: 'MyWebFont';
+                        src: url('WebFont.eot');
+                        src: url('WebFont.eot?#iefix') format('embedded-opentype'),
+                        url('WebFont.woff') format('woff'),
+                        url('WebFont.ttf') format('truetype'),
+                        url('WebFont.svg#webfont') format('svg');
+                        }
+                    </code>
+
+                    <p>We've already gone ahead and generated the code for you. All you have to do is link to the stylesheet in your HTML, like this:</p>
+                    <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;stylesheet.css&quot; type=&quot;text/css&quot; charset=&quot;utf-8&quot; /&gt;</code>
+
+                    <h2>3. Modify your own stylesheet</h2>
+                    <p>To take advantage of your new fonts, you must tell your stylesheet to use them. Look at the original @font-face declaration above and find the property called "font-family." The name linked there will be what you use to reference the font. Prepend that webfont name to the font stack in the "font-family" property, inside the selector you want to change. For example:</p>
+                    <code>p { font-family: 'WebFont', Arial, sans-serif; }</code>
+
+                    <h2>4. Test</h2>
+                    <p>Getting webfonts to work cross-browser <em>can</em> be tricky. Use the information in the sidebar to help you if you find that fonts aren't loading in a particular browser.</p>
+                </div>
+
+                <div class="grid5 sidebar">
+                    <div class="box">
+                        <h2>Troubleshooting<br/>Font-Face Problems</h2>
+                        <p>Having trouble getting your webfonts to load in your new website? Here are some tips to sort out what might be the problem.</p>
+
+                        <h3>Fonts not showing in any browser</h3>
+
+                        <p>This sounds like you need to work on the plumbing. You either did not upload the fonts to the correct directory, or you did not link the fonts properly in the CSS. If you've confirmed that all this is correct and you still have a problem, take a look at your .htaccess file and see if requests are getting intercepted.</p>
+
+                        <h3>Fonts not loading in iPhone or iPad</h3>
+
+                        <p>The most common problem here is that you are serving the fonts from an IIS server. IIS refuses to serve files that have unknown MIME types. If that is the case, you must set the MIME type for SVG to "image/svg+xml" in the server settings. Follow these instructions from Microsoft if you need help.</p>
+
+                        <h3>Fonts not loading in Firefox</h3>
+
+                        <p>The primary reason for this failure? You are still using a version Firefox older than 3.5. So upgrade already! If that isn't it, then you are very likely serving fonts from a different domain. Firefox requires that all font assets be served from the same domain. Lastly it is possible that you need to add WOFF to your list of MIME types (if you are serving via IIS.)</p>
+
+                        <h3>Fonts not loading in IE</h3>
+
+                        <p>Are you looking at Internet Explorer on an actual Windows machine or are you cheating by using a service like Adobe BrowserLab? Many of these screenshot services do not render @font-face for IE. Best to test it on a real machine.</p>
+
+                        <h3>Fonts not loading in IE9</h3>
+
+                        <p>IE9, like Firefox, requires that fonts be served from the same domain as the website. Make sure that is the case.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div id="footer">
+        <p>&copy;2010-2017 Font Squirrel. All rights reserved.</p>
+    </div>
+</div>
+</body>
+</html>

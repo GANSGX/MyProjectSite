@@ -1,0 +1,480 @@
+@font-face {
+    font-family: 'alone_in_spaceregular';
+    src: url('./fontstyle/aloneinspacereguler-qz2xr-webfont.woff') format('woff2'),
+         url('./fontstyle/aloneinspacereguler-qz2xr-webfont.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'alone_in_spaceregular', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    z-index: 1000;
+    transition: background-color 0.5s ease;
+
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    font-family: 'alone_in_spaceregular', sans-serif;
+    letter-spacing: 2px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+nav ul li .logo {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    transform: scale(1.1);
+    color: #ff0;
+}
+
+.fullscreen {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.main-background {
+    background-image: url('./img/fonmain.jpg');
+}
+
+.about-background {
+    background-image: url('./img/fon2.jpg');
+
+}
+
+.tours-background {
+    background-image: url('./img/fon3.jfif');
+}
+
+.price-background {
+    background-image: url('./img/fon4.jfif');
+}
+
+.faq-background {
+    background-image: url('./img/fon5.jfif');
+}
+
+.contacts-background {
+    background-image: url('./img/fon6.jfif');
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0);
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.overlay h1 {
+    color: #fff;
+    font-size: 48px;
+    font-family: 'alone_in_spaceregular', sans-serif;
+    letter-spacing: 5px;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    width: 50px;
+}
+
+.scroll-down img {
+    width: 100%;
+}
+
+.section-title {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 48px;
+    font-family: 'alone_in_spaceregular', sans-serif;
+    letter-spacing: 5px;
+    margin: 0;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.section-title:hover {
+    transform: translate(-50%, 0) scale(1.1);
+    color: #ff0;
+}
+
+.about-content {
+    text-align: left;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 600px;
+    margin: 20px 20px 0;
+    padding-left: 20px;
+}
+
+.about-content p {
+    margin: 0 0 10px 0;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.about-content p:hover {
+    transform: scale(1.05);
+    color: #ff0;
+}
+
+section {
+    padding: 100px 20px;
+    min-height: 80vh;
+    background-color: #f2f2f2;
+    box-sizing: border-box;
+}
+
+/* #tours {
+    background-color: #e6e6e6;
+}
+
+#price {
+    background-color: #cccccc;
+}
+
+#faq {
+    background-color: #b3b3b3;
+}
+
+#contacts {
+    background-color: #999999;
+} */
+
+.tour-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.tour-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden; /* Обрезать изображение, выходящее за пределы дива */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 350px; 
+    height: 400px; 
+    margin-right: 40px;
+}
+
+.tour-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px rgba(255, 255, 255, 0.8); 
+}
+
+.tour-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Сохранить пропорции и обрезать изображение */
+    transition: transform 0.3s ease;
+}
+
+.tour-card:hover .tour-image {
+    transform: scale(1.1); /* Увеличение размера изображения при наведении */
+}
+
+.tour-title {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 24px;
+    font-family: 'alone_in_spaceregular', sans-serif;
+    letter-spacing: 3px;
+    margin-top: 10px;
+    transition: color 0.3s ease; 
+}
+
+.tour-card:hover .tour-title {
+    color: #ff0; /* Меняем цвет текста при наведении */
+}
+
+#tours .section-title {
+    position: absolute;
+    top: 60px; 
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: #fff;
+    font-size: 48px;
+    font-family: 'alone_in_spaceregular', sans-serif;
+    letter-spacing: 5px;
+    margin: 0;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#tours .section-title:hover {
+    transform: translate(-50%, 0) scale(1.1);
+    color: #ff0;
+}
+
+
+/* Модальные окна */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.4); 
+    animation: fadeIn 0.5s; /* Анимация появления */
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.modal-content {
+    background-color: rgba(53, 52, 52, 0.9); 
+    color: #fff; 
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    border-radius: 10px;
+    animation: slideIn 0.5s; /* Анимация появления */
+}
+
+@keyframes slideIn {
+    from {transform: translateY(-50px);}
+    to {transform: translateY(0);}
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.price-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.price-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden; /* Обрезать изображение, выходящее за пределы дива */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 350px; /* Установка ширины дивов */
+    height: 400px;
+    margin-right: 40px;
+}
+
+.price-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px rgba(255, 255, 255, 0.8); /* Увеличено размытие и уменьшена прозрачность */
+}
+
+.price-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Сохранить пропорции и обрезать изображение */
+    transition: transform 0.3s ease;
+}
+
+.price-card:hover .price-image {
+    transform: scale(1.1); /* Увеличение размера изображения при наведении */
+}
+
+.price-title {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 24px;
+    font-family: 'calibri', sans-serif;
+    letter-spacing: 3px;
+    margin-top: 10px;
+    transition: color 0.3s ease; /* Убрано transform для статичности текста */
+}
+
+.price-card:hover .price-title {
+    color: #ff0; /* Меняем цвет текста при наведении */
+}
+
+.faq-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 10px; /* Отступ сверху для размещения блоков FAQ под заголовком */
+}
+
+.faq-block {
+    background: rgba(0, 0, 0, 0.8); /* Меньшая прозрачность */
+    border-radius: 15px;
+    padding: 15px; /* Уменьшение отступов для меньших блоков */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-block:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px rgba(255, 255, 255, 0.8);
+}
+
+.faq-block h3 {
+    color: #fff;
+    font-size: 18px; /* Уменьшение размера шрифта */
+    font-family: 'alone_in_spaceregular', sans-serif;
+    margin-bottom: 10px;
+}
+
+.faq-block p {
+    color: #fff;
+    font-size: 14px; /* Уменьшение размера шрифта */
+    font-family: 'alone_in_spaceregular', sans-serif;
+    line-height: 2;
+}
+
+.contacts-container {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
+    gap: 100px; /* Расстояние между блоками */
+    margin-top: 20px; 
+}
+
+.contact-block {
+    background: rgba(255, 255, 255, 0.2); 
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    width: 300px; 
+    height: 260px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center; 
+}
+
+.contact-block img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-top: 10px; 
+}
+
+.contact-block h3 {
+    color: #fff;
+    font-size: 18px;
+    font-family: 'alone_in_spaceregular', sans-serif;
+    margin-bottom: 10px;
+}
+
+.contact-info {
+    color: #fff !important; /* Обеспечиваем приоритетность */
+    font-size: 14px;
+    font-family: 'alone_in_spaceregular', sans-serif;
+    text-align: center; 
+}
+
+.contact-block .contact-info p {
+    color: #fff !important; /* Указываем белый цвет текста для всех параграфов */
+    margin: 5px 0; /* Добавляем отступы между параграфами */
+}
+
+
+footer {
+    background: #131313; 
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: 'alone_in_spaceregular', sans-serif;
+    position: relative;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    width: 80%; 
+    justify-content: space-between;
+}
+
+.footer-content h1 {
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.footer-right {
+    text-align: left;
+}
+
+.footer-right p {
+    margin: 5px 0;
+    font-size: 14px;
+}
